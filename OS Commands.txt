@@ -1,0 +1,103 @@
+[Windows Commands]
+
+help								\\ shows the entire commands
+help command						\\ shows the details of specified command
+
+cd	"address"						\\ change directory
+cd ..							\\ go back
+dir								\\ list all files and folders
+D:	OR	F:						\\ change drive from C to (D or F)
+md fileName	 | mkdir fileName		\\ make directory (folder)
+rd fileName | rmdir fileName			\\ remove directory (folder)
+rd /s fileName						\\ force remove (for folders that has content inside of it)
+rename oldName newName				\\ rename files/folders from oldName to newName
+echo content > fileName.txt			\\ create files using echo
+echo content >> fileName.txt			\\ edits the contents of the file without removing the current content
+copy filaName folderName			\\ copies the fileName into folderName
+copy fileName1 fileName2			\\ copies the content of fileName1 to fileName2 (removes the content of fileName2)
+copy file1 + file2					\\ copy the content in file2 and combine it with file1 (new combination will be in file1)
+xcopy folder1 folder2	/s			\\ copy all content from folder1 to folder2
+del fileName						\\ remove files
+move fileName folderName			\\ moves the fileName to folderName
+cls								\\ clear screen
+wmic logicaldisk get name			\\ gets the available drives
+color #$							\\ change # with a number and $ with an alphabet (0B for example), changes the colors of the cmd
+
+--------------------------------------------------------------------------
+[Ubuntu Commands]
+
+command --help						\\ shows the available arguments for the specified command
+
+sudo apt update					\\ for update
+sudo apt upgrade					\\ for update
+sudo apt-get install prog			\\ installs specified program, change prog with the desired one
+pwd								\\ shows the current location (print work directory)
+ls								\\ list folders and files in the direction (-l for more details, -a for hidden files, -la for detailed hidden files, -R for folders and subfolders)
+clear							\\ clean the terminal
+history							\\ shows the history of typed commands (you can provide a number after it for specified last n commands)
+cat fileName						\\ reads files
+tac fileName						\\ reads files upside down
+head -# fileName					\\ change # with number, reads first # number of lines of the file.
+tail -# fileName					\\ change # with number, reads last # number of lines of the file.
+nano fileName						\\ write file (and create it if not existed)
+cd | mkdir | rmdir 					\\ same as windows (add -V for properties)
+rm fileName OR rm *					\\ remove files.
+rm -r folder						\\ remove directories that have content inside of it (add -v for more info)
+cp file1 file2						\\ copy file1 to file2
+cp -r folder1 folder2				\\ copy folder1 to folder2
+mv file place						\\ moves the file
+mv oldName newName					\\ changes the name of the file
+alias Name='command'				\\ create alias (Name) for a command (command)
+command > file						\\ store the 'command' results to 'file'
+command >> file					\\ store the 'command' results to 'file' without removing the previous content of the file
+grep word file						\\ search for 'word' in the file
+diff file1 file2					\\ difference between the two files
+touch fileName						\\ create files only (for edit, use nano) if file exists, touch does nothing
+printf("Hello")					\\ prints Hello
+echo -n "text"						\\ prints "text" after doing underline
+passwd							\\ changes the account password
+man 	command						\\ displays the user manual of the command (use -f after man for less info)
+info command						\\ shows info about specified 'command'
+which command						\\ shows the location where the command is defined
+xman								\\ displays the user manual
+find fileOrFolder					\\ check if the file or the folder exists in the current path
+locate fileOrFolder					\\ search for the file or the folder in the entire system.
+wc fileName						\\ counts the number of (lines, words, characters) of the file (use -l for only lines, -w for only words)
+id								\\ shows the information about the user
+who								\\ shows the current user, and the time
+chmod (u or g or o)+(r or w or x)	file	\\ change mode of the user (to give permissions for read, write, or execute)
+chmod (u or g or o)-(r or w or x)	file	\\ change mode of the user (to remove permissions for read, write, or execute)
+
+sudo adduser user | sudo useradd -m user	\\ create a new user named user (with home) 
+sudo deluser user | usdo userdel user	\\ delete a user (add -f to force deleting if you have a problem)
+sudo groupadd -g groupID newGroup		\\ create new group named newGroup with ID groupID (groupID should be more than 1000)
+sudo groupdel groupName				\\ deletes group
+sudo chgrp groupName fileName		\\ change the groupName of fileName to groupName
+sudo passwd newUser					\\ set a password for the newUser
+sudo chown newOwner file			\\ change the owner of the file
+sudo usermod -g groupName userName	\\ add user into group (primary)
+sudo usermod -a -G groupName userName	\\ add user into group (secondary)
+su userName						\\ switch user to userName
+less etc/databaseName | grep target	\\ shows short parts of the database that has "target" 
+less etc/databaseName | grep target	\\ shows short parts of the database that has "target" 
+getent database					\\ search
+
+
+| to create shell script |
+nano script.sh
+	Inside the script:
+		#!/bin/bash
+		[script part]
+--------------
+to run script:
+	bash scripName 		(add -v to see the progress, add -x for debug)
+OR
+	./scriptName.sh
+---------------
+for comments:
+	<<CommentName
+		comments
+	CommentName
+
+
+
